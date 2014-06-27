@@ -1,0 +1,28 @@
+<br/>
+<h1>Register a new Team!</h1>
+
+<br/><br/>
+
+<div class="row">
+  <div class="col-md-2"><%= label_tag(:teamname, "Team Name:") %></div>
+  <div class="col-md-10"><%= text_field_tag(:teamname, "", size: "62x1") %></div>
+</div>
+
+<br/><br/><br/>
+
+<div class="row">
+  <div class="col-md-4">Full Name</div>
+  <div class="col-md-8">Email</div>
+</div>
+
+<% 5.times do %>
+
+<div class="row">
+  <div class="col-md-4"><%= text_field_tag(:fullname, "", size: "40x1") %></div>
+  <div class="col-md-8"><%= text_field_tag(:email, "", size: "40x1") %></div>
+</div>
+<br/>
+
+<% end %>
+
+<%= submit_tag("Submit", class: "btn btn-primary") %>

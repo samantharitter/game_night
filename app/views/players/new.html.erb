@@ -1,0 +1,29 @@
+New player signup here.
+
+Register, please!
+
+<%= form_tag players_url do %>
+<div>
+  <div class="row">
+    <div class="col-md-1">
+      <%= label_tag(:fullname, "Full Name:") %>
+    </div>
+    <div class="col-md-11">
+      <%= text_field_tag(:fullname, "", size: "70x1") %>
+    </div>
+    <br/><br/>
+  </div>
+
+  <div class="row">
+    <div class="col-md-1">
+      <%= label_tag(:email, "MongoDB Email:") %>
+    </div>
+    <div class="col-md-11">
+      <%= text_field_tag(:email, "", size: "70x1") %>
+    </div>
+    <br/><br/>
+  </div>
+  <br/>
+  <%= submit_tag("Submit", class: "btn btn-primary") %>
+  <% end %>
+</div>

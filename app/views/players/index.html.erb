@@ -1,0 +1,42 @@
+<h1>Leaderboard</h1>
+
+<br/><br/>
+
+<% i = 0 %>
+<div>
+  <div class="row">
+    <div class="col-md-1">Rank</div>
+    <div class="col-md-1">Score</div>
+    <div class="col-md-1">Icon</div>
+    <div class="col-md-3">Name</div>
+    <div class="col-md-6">Team</div>
+  </div>
+  <br/>
+
+  <% @players_by_score.each do |player| %>
+  <div class="row">
+
+    <div class="col-md-1">
+      <%= i += 1 %>
+    </div>
+
+    <div class="col-md-1">
+      <%= player.score %>
+    </div>
+
+    <div class="col-md-1">
+      <!-- this is for an image /-->
+    </div>
+
+    <div class="col-md-3">
+      <%= player.fullname %>
+    </div>
+
+    <div class="col-md-6">
+      <!-- this is for team icon /-->
+    </div>
+
+  </div>
+  <% end %>
+
+</div>

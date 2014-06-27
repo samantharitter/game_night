@@ -1,0 +1,49 @@
+<% @game = Game.find(params[:id])%>
+<br/><br/>
+<h1><%= @game.name %></h1>
+Referee: <%= @game.referee %>
+<br/><br/>
+
+<%= link_to "Play!", { :controller => "plays", :action => "new",
+                       :game_id => @game[:id], :class => 'btn btn-primary' } %>
+
+<br/><br/>
+
+<div>
+High Scores:
+
+  <div class="row">
+    <div class="col-md-1">Rank</div>
+    <div class="col-md-1">Score</div>
+    <div class="col-md-1">Icon</div>
+    <div class="col-md-3">Name</div>
+    <div class="col-md-6">Team</div>
+  </div>
+
+<% i = 0 %>
+<% @players.each do |player| %>
+  <div class="row">
+
+    <div class="col-md-1">
+      <%= i += 1 %>
+    </div>
+
+    <div class="col-md-1">
+      <%= @game.score(player[:id]) %>
+    </div>
+
+    <div class="col-md-1">
+      <!-- this is for an image /-->
+    </div>
+
+    <div class="col-md-3">
+      <%= player.fullname %>
+    </div>
+
+    <div class="col-md-6">
+      <!-- this is for team icon /-->
+    </div>
+
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,44 @@
+<% @game = Game.find(params[:game_id]) %>
+
+<h1>Play <%= @game.name %> </h1>
+
+<br/><br/>
+
+<div>
+  <%= form_tag plays_url do %>
+  <div class="row">
+    <div class="col-md-2">
+      <%= label_tag(:name, "Player / Team:") %>
+    </div>
+    <div class="col-md-10">
+      <%= text_field_tag(:name, "", size: "70x1") %>
+    </div>
+    <br/><br/>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      <%= label_tag(:points, "Points earned:") %>
+    </div>
+    <div class="col-md-10">
+      <%= text_field_tag(:points, "", size: "2x1") %>
+    </div>
+    <br/><br/><br/>
+  </div>
+<br/>
+  <div class="row">
+    <div class="col-md-2">
+      <%= label_tag(:ref, "Ref code:") %>
+    </div>
+    <div class="col-md-10">
+      <%= password_field_tag(:ref, "", size: "70x1") %>
+    </div>
+    <br/><br/>
+  </div>
+  <br/>
+
+  <%= hidden_field_tag(:game_id, @game[:id]) %>
+
+  <%= submit_tag("Submit", class: "btn btn-primary") %>
+  <% end %>
+</div>

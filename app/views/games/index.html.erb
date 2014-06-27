@@ -1,0 +1,22 @@
+<h1>Games</h1>
+
+
+<br/><br/>
+
+<div class="row">
+<% i = 0 %>
+<% @all_games.each do | game | %>
+  <div class="col-md-4">
+    <h1><%= link_to game.name, "/games/" + game[:id], :game_id => game[:id] %></h1>
+    <%= game.referee %>
+  </div>
+
+<% i += 1 %>
+<% if i % 3 == 0 %>
+</div>
+<br/><br/>
+<div class="row">
+<% end %>
+<% end %>
+</div>
+<br/><br/><br/>

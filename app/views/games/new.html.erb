@@ -1,0 +1,30 @@
+<br/>
+<h1>Register a new game.</h1>
+
+<br/><br/>
+
+<div>
+  <%= form_tag games_url do %>
+  <div class="row">
+    <div class="col-md-2">
+      <%= label_tag(:name, "Game Name:") %>
+    </div>
+    <div class="col-md-10">
+      <%= text_field_tag(:name, "", size: "70x1") %>
+    </div>
+    <br/><br/>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      <%= label_tag(:referee, "Referee:") %>
+    </div>
+    <div class="col-md-10">
+      <%= text_field_tag(:referee, "", size: "70x1") %>
+    </div>
+    <br/><br/>
+  </div>
+  <br/>
+  <%= submit_tag("Submit", class: "btn btn-primary") %>
+  <% end %>
+</div>
