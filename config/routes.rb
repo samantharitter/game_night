@@ -13,4 +13,11 @@ GameNight::Application.routes.draw do
   resources :games
   resources :teams
   resources :plays
+  resource  :session
+  resources :referee
+
+  # stuff for referee authentication
+  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 end

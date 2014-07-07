@@ -26,6 +26,11 @@
 
     <div class="col-md-1">
       <!-- this is for an image /-->
+      <% if player.img %>
+      <!-- put in their real image /-->
+      <% else %>
+      <img src="http://www.fitness.gov/img/do-something-video-game-controller.png" width="30px">
+      <% end %>
     </div>
 
     <div class="col-md-3">
@@ -38,5 +43,5 @@
 
   </div>
   <% end %>
-
+<br/><br/><br/>
 </div>

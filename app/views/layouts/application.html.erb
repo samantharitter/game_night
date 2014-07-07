@@ -9,6 +9,16 @@
 <body>
 
 <div class="container">
+
+  <div id="referee-widget" class="text-right">
+    <% if current_referee %>
+    Welcome, <strong><%= current_referee.name %></strong>!
+    <%= link_to "Sign out", "signout", id: "sign_out" %>
+    <% else %>
+    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    <% end %>
+  </div>
+
   <%= yield %>
 </div>
 
