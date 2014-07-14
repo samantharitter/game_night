@@ -9,15 +9,23 @@ class PlaysController < ApplicationController
   def thanks
   end
 
-  def create
-    # validate ref code
+  def new
+    # need this to autocomplete names
     @game = Game.find(params[:game_id])
-    if params[:ref] != @game.referee
-      redirect_to :action => :cheating
-      return
+    @player_names = Player.all.collect do |player|
+      player.fullname
     end
+    @team_names = Team.all.collect do |team|
+      team.name
+    end
+    @all_names = @player_names + @team_names
+  end
+
+  def create
+    @game = Game.find(params[:game_id])
 
     @play = Play.new
+    # check that points is an integer
     @play.points = params[:points]
     @play.time_of_play = Date.new
     @play.game_id = params[:game_id]
