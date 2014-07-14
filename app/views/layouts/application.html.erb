@@ -8,16 +8,23 @@
 </head>
 <body>
 
-<div class="container">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <%= link_to "Game Night", "/", class: "brand h2" =%>
+            <div id="referee-widget" class="text-right">
+              <% if current_referee %>
+              Welcome, <strong><%= current_referee.fullname %></strong>!
+              <%= link_to "Sign out", "signout", id: "sign_out" %>
+              <% else %>
+              <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+              <% end %>
+            </div>
+        </div>
+    </div>
+</div>
 
-  <div id="referee-widget" class="text-right">
-    <% if current_referee %>
-    Welcome, <strong><%= current_referee.fullname %></strong>!
-    <%= link_to "Sign out", "signout", id: "sign_out" %>
-    <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-    <% end %>
-  </div>
+<div class="container">
 
   <%= yield %>
 </div>
