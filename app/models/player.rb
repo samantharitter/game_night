@@ -7,11 +7,6 @@ class Player
   field :email,    type: String
   field :img,      type: String
 
-  # Validations
-  validates_presence_of :fullname, :email
-  email_regex = /\S+@mongodb.com/
-  validates_format_of :email, :with => email_regex
-
   # Get this player's overall score
   def score
     Play.where({:player_id => self._id}).sum(:points)
