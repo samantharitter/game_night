@@ -1,1 +1,24 @@
-Teams index!
+
+<div class="row">
+  <div class="col-md-1">Rank</div>
+  <div class="col-md-1">Score</div>
+  <div class="col-md-10">Team</div>
+</div>
+
+<% i = 0 %>
+<div>
+  <% @teams_by_score.each do |team| %>
+  <div class="row">
+
+    <div class="col-md-1"><br/><%= i += 1 %></div>
+    <div class="col-md-1"><br/><%= team.score %></div>
+
+    <div class="col-md-10">
+    <h3><%= team.name %></h3>
+    <% team.players.each do |player| %>
+      <%= player.fullname %><br/>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>
