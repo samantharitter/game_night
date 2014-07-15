@@ -38,7 +38,7 @@ end
 players = [
            { "fullname" => "Aaron Hammond", "email" => "aaron.hammond@mongodb.com" },
            { "fullname" => "Alex Grover", "email" => "alex.grover@mongodb.com" },
-           { "fullname" => "Alex Kleinman", "email" => "alex.kleinman@mongodb.com" },
+           { "fullname" => "Alex Kleinman", "email" => "alex.kleiman@mongodb.com" },
            { "fullname" => "Antonio Juliano", "email" => "antonio.juliano@mongodb.com" },
            { "fullname" => "Bill DeRose", "email" => "bill.derose@mongodb.com" },
            { "fullname" => "Cody Wilson", "email" => "cody.wilson@mongodb.com" },
@@ -103,7 +103,7 @@ end
 
 # Link the players into teams
 teams = {
-  "Team Flying Mongoose Fury Dragon Strike" => [ "Alex Kleinman", "Judah Schvimer", "Cody Wilson", "Rahul Dhodapkar", "Kyle Suarez"],
+  "Team Flying Mongoose Fury Dragon Strike" => [ "Alex Kleiman", "Judah Schvimer", "Cody Wilson", "Rahul Dhodapkar", "Kyle Suarez"],
   "Team Cronut" => [ "Josh Clapper", "Russell Kaplan", "Alex Grover", "Kenny George", "Matt Neubauer" ],
   "#team" => [ "Melissa O'Sullivan", "Esha Maharishi", "Maggie Cai", "Elle Morris", "Walter Menendez" ],
   "Team Awesomesauce" => [ "Thomas Rueckstiess", "Jonathan Balsano", "Eric Daniels", "Antonio Juliano", "Rassi" ],
