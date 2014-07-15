@@ -97,7 +97,7 @@ players = [
 
 # add the players to the database
 players.each do |p|
-  Player.create(fullname: p['fullname'], email: p['email'])
+  Player.create(fullname: p['fullname'], user_key: p['email'])
 end
 
 # Link the players into teams
