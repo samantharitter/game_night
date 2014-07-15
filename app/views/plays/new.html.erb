@@ -7,10 +7,18 @@
 <% else %>
 
 <script type="text/javascript">
-var names = [
-  <% @all_names.each do |name| %>
-  "<%= name %>",
-  <% end %> ];
+$(document).ready(function() {
+    $(function() {
+        var names = [
+          <% @all_names.each do |name| %>
+          "<%= name %>",
+          <% end %> ];
+
+        $('#names').autocomplete({
+            source: names
+        });
+    });
+});
 </script>
 
 <div>
@@ -19,8 +27,8 @@ var names = [
     <div class="col-md-2">
       <%= label_tag(:name, "Player / Team:") %>
     </div>
-    <div class="col-md-10">
-      <%= text_field_tag(:name, "", size: "70x1") %>
+    <div class="col-md-10" class="ui-widget">
+      <%= text_field_tag(:name, "", size: "70x1", id: "names") %>
     </div>
     <br/><br/>
   </div>
