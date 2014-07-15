@@ -9,24 +9,37 @@
 <body>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <%= link_to "Game Night", "/", class: "brand h2" =%>
-            <div id="referee-widget" class="text-right">
-              <% if current_referee %>
-              Welcome, <strong><%= current_referee.fullname %></strong>!
-              <%= link_to "Sign out", "signout", id: "sign_out" %>
-              <% else %>
-              <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-              <% end %>
-            </div>
-        </div>
-    </div>
-</div>
+  <div class="container-fluid">
 
+    <!-- all the other links in the header /-->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Game Night", "/", class: "h4" =%></li>
+        <li><%= link_to "Teams", "/teams/", class: "h4" =%></li>
+        <li><%= link_to "Players", "/players/", class: "h4" =%></li>
+        <li><%= link_to "Games", "/games/", class: "h4" =%></li>
+      </ul>
+
+      <div id="referee-widget" class="text-right">
+        <% if current_referee %>
+        <br/><br/>Welcome, <strong><%= current_referee.fullname %></strong>!
+        <%= link_to "Sign out", "signout", id: "sign_out" %>
+        <% else %>
+        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<br/><br/>
 <div class="container">
 
+<div class="well">
   <%= yield %>
+<br/>
+<br/>
+</div>
+<br/>
 </div>
 
 </body>
