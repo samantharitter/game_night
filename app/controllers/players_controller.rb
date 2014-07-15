@@ -3,7 +3,7 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new
     @player.fullname = params[:fullname]
-    @player.email = params[:email]
+    @player.user_key = params[:user_key]
     if @player.save
       redirect_to :action => :index
     else

@@ -4,7 +4,7 @@ class Player
   belongs_to :team
 
   field :fullname, type: String
-  field :email,    type: String
+  field :user_key, type: String
   field :img,      type: String
 
   # Get this player's overall score
